@@ -51,7 +51,7 @@ $post->content) }}</textarea>
                 </select>
             </div>
             <div class="text-right">
-                …
+                <button type="submit" class="btn btn-success">更新</button>
             </div>
         </form>
 

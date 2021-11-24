@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Post;
+use Illuminate\Http\Request;
 class AdminPostsController extends Controller
 {
 public function index()
@@ -15,19 +16,19 @@ public function index()
     {
         return view('admin.posts.create');
     }
-
+    public function store(Request $request)
+    {
+        Post::create($request -> all());
+        return redirect() ->route('admin.posts.index');
+    }
     public function edit ($id)
     {
         $post=Post::find($id);
         $data=['post'=>$post];
         return view('admin.posts.edit',$data);
     }
-    public function store(Request $request)
-    {
-        Post::create($request -> all());
-        return redirect() -> route('admin.posts.index');
-    }
-    public function update(Request$request,$id)
+
+    public function update(Request $request,$id)
     {
         $post=Post::find($id);
         $post -> update($request -> all());
