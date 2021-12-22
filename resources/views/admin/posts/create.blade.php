@@ -3,7 +3,8 @@
 @section('title', '新增文章')
 
 @section('content')
-<!-- Page Heading -->
+
+        <!-- Page Heading -->
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
@@ -17,7 +18,7 @@
     </div>
 </div>
 <!-- /.row -->
-
+@if($errors -> any())
 <div class="row">
     <div class="col-lg-12">
         <div class="alert alert-danger alert-dismissable">
@@ -26,6 +27,7 @@
         </div>
     </div>
 </div>
+@endif
 <!-- /.row -->
 
 <div class="row">

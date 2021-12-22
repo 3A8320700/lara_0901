@@ -3,7 +3,7 @@
 @section('title', '編輯文章')
 
 @section('content')
-<!-- Page Heading -->
+        <!-- Page Heading -->
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
@@ -17,7 +17,7 @@
     </div>
 </div>
 <!-- /.row -->
-
+ @if($errors -> any())
 <div class="row">
     <div class="col-lg-12">
         <div class="alert alert-danger alert-dismissable">
@@ -26,8 +26,8 @@
         </div>
     </div>
 </div>
+@endif
 <!-- /.row -->
-
 <div class="row">
     <div class="col-lg-12">
         <form action="/admin/posts/{{$post->id}}" method="POST" role="form">
@@ -62,4 +62,5 @@ $post->content) }}</textarea>
     </div>
 </div>
 <!-- /.row -->
+
 @endsection
